@@ -16,4 +16,9 @@ using pipenv
 
 ## Running
 
-`pipenv run "python controlly/controlly.py`
+```bash
+$ pipenv run "python controlly/controlly.py <command> <--project=PROJECT>"
+```
+
+**command** is list, start, or stop
+**project** is optional
