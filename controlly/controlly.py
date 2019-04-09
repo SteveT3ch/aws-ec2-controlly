@@ -1,11 +1,25 @@
 import boto3
+import click
+
+session = boto3.Session(profile_name='slsadmin')
+ec2 = session.resource('ec2')
+
+
+@click.command()
+def list_instances():
+    "List Instances"
+    for i in ec2.instances.all():
+        print(','.join((
+            i.id,
+            i.instance_type,
+            i.placement['AvailabilityZone'],
+            i.state['Name'],
+            i.public_dns_name
+        )))
 
 
 def main():
-    session = boto3.Session()
-    ec2 = session.resource('ec2')
-    for i in ec2.instances.all():
-        print(i)
+    list_instances()
 
 
 if __name__ == '__main__':
