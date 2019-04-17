@@ -17,8 +17,9 @@ using pipenv
 ## Running
 
 ```bash
-$ pipenv run "python controlly/controlly.py <command> <--project=PROJECT>"
+$ pipenv run "python controlly/controlly.py <command> <subcommand> <--project=PROJECT>"
 ```
 
-**command** is list, start, or stop
+**command** is instances, volume, or snapshots
+**subcommand** - depends on command
 **project** is optional
